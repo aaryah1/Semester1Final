@@ -7,14 +7,15 @@ $(document).ready(function () {
         $("#characterDisplay").empty();
 
         // Store user input
-        let era = $("#eraInput").val().trim();
+        let era = $("#eraInput").val().trim().toLowerCase();
         let adjective = $("#adjectiveInput").val().trim().toLowerCase();
 
-        // Check era answer
+        // Validate era input
         if (era !== "1980s") {
             $("#output").append(
                 "<p>Incorrect era. The correct answer is the <strong>1980s</strong>.</p>"
             );
+            return; // STOP the function if era is wrong
         } else {
             $("#output").append(
                 "<p>Correct! Stranger Things takes place in the 1980s.</p>"

@@ -2,64 +2,55 @@ $(document).ready(function () {
 
     $("#submitBtn").click(function () {
 
-        // Clear previous output and image
+        // Clear previous output
         $("#output").empty();
         $("#characterDisplay").empty();
 
-        // Store user input
-        let era = $("#eraInput").val().trim().toLowerCase();
+        // Store user input in variables
+        let era = $("#eraInput").val().trim();
         let adjective = $("#adjectiveInput").val().trim().toLowerCase();
 
-        // Validate era input
+        // Operator + conditional check
         if (era !== "1980s") {
-            $("#output").append(
-                "<p>Incorrect era. The correct answer is the <strong>1980s</strong>.</p>"
-            );
-            return; // STOP the function if era is wrong
+            $("#output").append("<p>Incorrect era. The correct answer is the <strong>1980s</strong>.</p>");
         } else {
-            $("#output").append(
-                "<p>Correct! Stranger Things takes place in the 1980s.</p>"
-            );
+            $("#output").append("<p>Correct! Stranger Things takes place in the 1980s.</p>");
         }
 
-        // Character matching
+        // Variables for character matching
         let character = "";
         let image = "";
 
         if (adjective === "ambitious") {
             character = "Nancy";
-            image = "Nancy.png";
+            image = "nancy.jpg";
         } else if (adjective === "observant") {
             character = "Jonathan";
-            image = "Jonathan.png";
+            image = "jonathan.jpg";
         } else if (adjective === "loyal") {
             character = "Mike";
-            image = "Mike.png";
+            image = "mike.jpg";
         } else if (adjective === "rational") {
             character = "Lucas";
-            image = "Lucas.png";
+            image = "lucas.jpg";
         } else if (adjective === "intelligent") {
             character = "Dustin";
-            image = "Dustin.png";
+            image = "dustin.jpg";
         } else if (adjective === "strong") {
             character = "Eleven";
-            image = "Eleven.png";
+            image = "eleven.jpg";
         } else if (adjective === "tough") {
             character = "Max";
-            image = "Max.png";
+            image = "max.jpg";
         } else {
-            $("#output").append(
-                "<p>Please enter a valid adjective from the list.</p>"
-            );
+            $("#output").append("<p>Please enter a valid adjective from the list.</p>");
             return;
         }
 
-        // Display result text
-        $("#output").append(
-            "<p>You match with <strong>" + character + "</strong>!</p>"
-        );
+        // Append result text
+        $("#output").append("<p>You match with <strong>" + character + "</strong>!</p>");
 
-        // Display image inside the red box
+        // Append image to rectangle
         $("#characterDisplay").append(
             "<img src='images/" + image + "' alt='" + character + "'>"
         );

@@ -23,25 +23,25 @@ $(document).ready(function () {
 
         if (adjective === "ambitious") {
             character = "Nancy";
-            image = "nancy.png";
+            image = "Nancy.png";
         } else if (adjective === "observant") {
             character = "Jonathan";
-            image = "jonathan.png";
+            image = "Jonathan.png";
         } else if (adjective === "loyal") {
             character = "Mike";
-            image = "mike.png";
+            image = "Mike.png";
         } else if (adjective === "rational") {
             character = "Lucas";
-            image = "lucas.png";
+            image = "Lucas.png";
         } else if (adjective === "intelligent") {
             character = "Dustin";
-            image = "dustin.png";
+            image = "Dustin.png";
         } else if (adjective === "strong") {
             character = "Eleven";
-            image = "eleven.png";
+            image = "Eleven.png";
         } else if (adjective === "tough") {
             character = "Max";
-            image = "max.png";
+            image = "Max.png";
         } else {
             $("#output").append("<p>Please enter a valid adjective from the list.</p>");
             return;

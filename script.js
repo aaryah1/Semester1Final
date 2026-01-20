@@ -2,22 +2,27 @@ $(document).ready(function () {
 
     $("#submitBtn").click(function () {
 
-        // Clear previous output
+        // Clear previous output and image
         $("#output").empty();
         $("#characterDisplay").empty();
 
-        // Store user input in variables
-        let era = $("#eraInput").val().trim();
+        // Store and normalize user input
+        let era = $("#eraInput").val().trim().toLowerCase();
         let adjective = $("#adjectiveInput").val().trim().toLowerCase();
 
-        // Operator + conditional check
+        // Check era answer (case-insensitive)
         if (era !== "1980s") {
-            $("#output").append("<p>Incorrect era. The correct answer is the <strong>1980s</strong>.</p>");
-        } else {
-            $("#output").append("<p>Correct! Stranger Things takes place in the 1980s.</p>");
+            $("#output").append(
+                "<p>Incorrect era. The correct answer is the <strong>1980s</strong>.</p>"
+            );
+            return; // STOP if era is wrong
         }
 
-        // Variables for character matching
+        $("#output").append(
+            "<p>Correct! Stranger Things takes place in the 1980s.</p>"
+        );
+
+        // Character matching
         let character = "";
         let image = "";
 
@@ -43,14 +48,18 @@ $(document).ready(function () {
             character = "Max";
             image = "Max.png";
         } else {
-            $("#output").append("<p>Please enter a valid adjective from the list.</p>");
+            $("#output").append(
+                "<p>Please enter a valid adjective from the list.</p>"
+            );
             return;
         }
 
-        // Append result text
-        $("#output").append("<p>You match with <strong>" + character + "</strong>!</p>");
+        // Display result text
+        $("#output").append(
+            "<p>You match with <strong>" + character + "</strong>!</p>"
+        );
 
-        // Append image to rectangle
+        // Display image inside the red box
         $("#characterDisplay").append(
             "<img src='images/" + image + "' alt='" + character + "'>"
         );
